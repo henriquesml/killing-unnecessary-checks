@@ -1,16 +1,16 @@
 // 1. Usando includes para matar duas verificações de um valor igual, mas em entidades diferentes.
 
 var primeira_condicao = 'sim'
-var segunda_condicao = 'sim'
+var segunda_condicao = 'não'
 
 // Exemplo ruim
-if ( primeira_condicao == 'sim' && segunda_condicao == 'sim' ) {
-  console.log('É sim mesmo (forma ruim)')
+if ( primeira_condicao == 'sim' || segunda_condicao == 'sim' ) {
+  console.log('Um deles é sim mesmo (forma ruim)')
 }
 
 // Exemplo bom
 if ( [primeira_condicao, segunda_condicao].includes('sim') ) {
-  console.log('É sim mesmo (forma boa)')
+  console.log('Um deles é sim mesmo (forma boa)')
 }
 
 // 2. Verificando a presença de valor sem várias condições.

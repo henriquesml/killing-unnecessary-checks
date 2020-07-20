@@ -1,4 +1,23 @@
-// 1. Usando includes para matar duas verificações de um valor igual, mas em entidades diferentes.
+// 1. Usando every para matar verificações de um valor igual, mas em entidades diferentes. Quando ambos precisam atender a uma condição.
+
+var primeira_condicao = true
+var segunda_condicao = false
+
+// Exemplo ruim
+if ( primeira_condicao == true && segunda_condicao == true ) {
+  console.log('Os dois são true (forma ruim)')
+}
+
+// Exemplo bom
+function isTrue(val){
+  return val == true
+}
+
+if ( [primeira_condicao, segunda_condicao].every(isTrue) ) {
+  console.log('Os dois são true (forma boa)')
+}
+
+// 2. Usando includes para matar verificações de um valor igual, mas em entidades diferentes. Quando apenas um precisa atender a condição.
 
 var primeira_condicao = 'sim'
 var segunda_condicao = 'não'
@@ -13,7 +32,7 @@ if ( [primeira_condicao, segunda_condicao].includes('sim') ) {
   console.log('Um deles é sim mesmo (forma boa)')
 }
 
-// 2. Verificando a presença de valor sem várias condições.
+// 3. Verificando a presença de valor em uma váriavel sem várias condições.
 
 var variavel_com_valor = 'Um valor'
 
@@ -27,7 +46,7 @@ if ( !!variavel_com_valor ) {
   console.log('Não ta vazio mesmo (forma boa)')
 }
 
-// 3. Usando dicionário para matar If's com x possibilidades e ações diferentes para cada uma delas.
+// 4. Usando dicionário para matar If's com x possibilidades e ações diferentes para cada uma delas.
 
 var tecla_pressionada = 'cima'
 
